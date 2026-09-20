@@ -1,4 +1,8 @@
-const API_URL = "http://localhost:5000";
+const API_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000"
+    : "https://login-system-kex4.onrender.com";
 
 async function register() {
   const name = document.getElementById("name").value;
